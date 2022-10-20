@@ -5,7 +5,7 @@ function photographerFactory(data) {
     const picture = `assets/photographers/${portrait}`
 
     function getUserCardDOM() {
-        const article = document.createElement('article');
+        const article = document.createElement('article')
         const link = document.createElement('a')
 
         link.href = './photographer.html?id=' + id
