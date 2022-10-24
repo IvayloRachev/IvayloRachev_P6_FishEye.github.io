@@ -15,6 +15,7 @@
     }
     // fin get the datas from json
 
+    //to display photographer informations
     async function displayData(photographers) {
         const photographersSection = document.querySelector(".photographer_section");
 
@@ -24,11 +25,13 @@
             photographersSection.appendChild(userCardDOM);
         });
     };
+    //fin to display photographer informations
 
+    //take photographers datas
     async function init() {
-        // Récupère les datas des photographes
         const { photographers } = await getPhotographers();
         displayData(photographers);
     };
 
     init();
+    //fin de take photographers datas
