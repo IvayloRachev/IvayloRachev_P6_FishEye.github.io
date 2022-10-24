@@ -1,4 +1,4 @@
-//function to show the informations on index page
+//function to create and display the photographers informations on index page
 function photographerFactory(data) {
     const { id, name, portrait, tagline, city, country, price } = data
 
@@ -42,3 +42,4 @@ function photographerFactory(data) {
     }
     return { getUserCardDOM }
 }
+//fin de function to create and display the photographers informations on index page
