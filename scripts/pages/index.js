@@ -8,7 +8,7 @@
             console.error(error)
             const errorElement = document.createElement('h2')
             errorElement.classList.add('photographers_error')
-            errorElement.textContent = 'Erreur de récupération des données'
+            errorElement.textContent = 'Une erreur est survenue.'
             main.appendChild(errorElement)
             return { photographers: [] }
         }
