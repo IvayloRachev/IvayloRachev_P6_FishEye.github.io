@@ -26,7 +26,7 @@ let photographer
 function fillHeader(photographer) {
     const { name, city, country, tagline, portrait } = photographer
     const nameElement = document.querySelector('.photograph_infos > h1')
-    const locationElement = document.querySelector('.photograph_infos > p:ntn-child(2)')
+    const locationElement = document.querySelector('.photograph_infos > p:nth-child(2)')
     const taglineElement = document.querySelector('.photograph_infos > p:last-child')
 
     nameElement.textContent = name
