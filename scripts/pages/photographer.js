@@ -1,6 +1,6 @@
 const searchParams = new URLSearchParams(location.search)
 const photographerId = +searchParams.get('id')
-let photographer = []
+let photographer
 
 //get the datas from json
 ;
