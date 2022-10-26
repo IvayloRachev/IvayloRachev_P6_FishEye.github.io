@@ -31,21 +31,29 @@
     </main>
     <!--fin de main-->
 
+    <!--contact modal-->
     <div id="contact_modal">
         <div class="modal">
             <header>
                 <h2>Contactez-moi</h2>
-                <img src="assets/icons/close.svg" onclick="closeModal()" />
+                <img src="./assets/icons/close.svg" onclick="closeModal()" alt="Fermez le formulaire de contact" />
             </header>
-            <form>
+            <form onsubmit="sendMessage(event)">
                 <div>
-                    <label>Prénom</label>
-                    <input />
+                    <label for="firstName">Prénom</label>
+                    <input type="text" id="firstName" name="firstName" />
+                    <label for="lastName">Nom</label>
+                    <input type="text" id="lastName" name="lastName" />
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message"></textarea>
                 </div>
-                <button class="contact_button">Envoyer</button>
+                <button class="contact_button" aria-label="Envoyer">Envoyer</button>
             </form>
         </div>
     </div>
+    <!--fin de contact modal-->
     <script src="./scripts/pages/photographer.js"></script>
     <script src="./scripts/utils/contactForm.js"></script>
 </body>
