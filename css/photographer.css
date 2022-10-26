@@ -44,15 +44,20 @@
 }
 
 .modal {
+    width: 40%;
+    height: fit-content;
+    margin: auto;
+    padding: 35px;
     border-radius: 5px;
     background-color: #DB8876;
-    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 35px;
-    margin: auto;
 }
 
 .modal header {
@@ -71,8 +76,8 @@
 }
 
 form {
-    display: flex;
     width: 100%;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -83,9 +88,9 @@ form label {
 }
 
 form div {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    width: 100%;
     align-items: self-start;
     margin-bottom: 26px;
 }
@@ -93,6 +98,13 @@ form div {
 form input {
     width: 100%;
     height: 68px;
+    border: none;
+    border-radius: 5px;
+}
+
+form textarea {
+    width: 100%;
+    height: 200px;
     border: none;
     border-radius: 5px;
 }
