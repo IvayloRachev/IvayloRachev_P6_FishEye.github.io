@@ -82,6 +82,6 @@ function displayMedias(photographer, medias) {
         article.appendChild(divInfos)
         divInfos.appendChild(spanName)
         divInfos.appendChild(spanLike)
-        mediaSection.appendChild(link)
+        mediasSection.appendChild(link)
     }
 }
