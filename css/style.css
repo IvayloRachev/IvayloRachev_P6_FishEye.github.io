@@ -35,14 +35,11 @@ h1 {
     margin-top: 100px;
 }
 
-.photographer_section article {
+.photographer_section article>a {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
-
-.photographer_section article>a {
     cursor: pointer;
     text-align: center;
     text-decoration: unset;

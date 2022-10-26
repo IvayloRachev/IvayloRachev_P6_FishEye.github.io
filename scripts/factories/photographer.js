@@ -6,37 +6,18 @@ function photographerFactory(data) {
 
     function getUserCardDOM() {
         const article = document.createElement('article')
-        const link = document.createElement('a')
+        let href = './photographer.html?id=' + id
 
-        link.href = './photographer.html?id=' + id
-        link.ariaLabel = name
-
-        const img = document.createElement('img')
-
-        img.setAttribute("src", picture)
-        img.alt = 'Photo du profil de ' + name
-
-        const h2 = document.createElement('h2')
-
-        h2.textContent = name
-
-        article.appendChild(link)
-        link.appendChild(img)
-        link.appendChild(h2)
-
-        const div = document.createElement('div')
-        const locationInfos = document.createElement('p')
-        const tagLineInfos = document.createElement('p')
-        const priceInfos = document.createElement('p')
-
-        locationInfos.textContent = city + ', ' + country
-        tagLineInfos.textContent = tagline
-        priceInfos.textContent = price + '€/jour'
-
-        div.appendChild(locationInfos)
-        div.appendChild(tagLineInfos)
-        div.appendChild(priceInfos)
-        article.appendChild(div)
+        article.innerHTML =
+            `<a href="${href}" aria-label="${name}">
+                <img class="profil" src="${picture}" alt="photo du profil de ${name}">
+                <h2 class="name">${name}</h2>
+            </a>
+            <div>
+                <p>${city}, ${country}</p>
+                <p>${tagline}</p>
+                <p>${price} €/jour</p>
+            </div>`
 
         return (article);
     }
