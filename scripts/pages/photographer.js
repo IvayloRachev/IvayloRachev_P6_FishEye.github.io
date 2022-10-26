@@ -45,8 +45,8 @@ function fillHeader(photographer) {
 
 //display medias
 function displayMedias(photographer, medias) {
-    const mediaSection = document.getElementById('photograph_medias')
-    mediaSection.innerHTML = ''
+    const mediasSection = document.getElementById('photograph_medias')
+    mediasSection.innerHTML = ''
 
     for (const media of medias) {
         const article = document.createElement('article')
@@ -68,8 +68,9 @@ function displayMedias(photographer, medias) {
         spanLike.classList.add('like')
         spanLike.onclick = ({ target }) => {
             if (likes.includes(media.id)) {
-                return console.log('pouet')
+                return console.log('Pouet')
             }
+
             const totalLikesElement = document.querySelector('.photograph_likeprice > span:first-child')
 
             totalLikesElement.textContent = parseInt(totalLikesElement.textContent) + 1 + ' ♥'
