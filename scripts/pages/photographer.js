@@ -22,7 +22,7 @@ let photographer
 })()
 //fin de get the datas from json
 
-//fotographer informations
+//photographer informations
 function fillHeader(photographer) {
     const { name, city, country, tagline, portrait } = photographer
     const nameElement = document.querySelector('.photograph_infos > h1')
@@ -41,3 +41,4 @@ function fillHeader(photographer) {
 
     header.appendChild(image)
 }
+//fin de photographer informations
