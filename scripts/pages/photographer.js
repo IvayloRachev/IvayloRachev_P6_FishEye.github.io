@@ -1,6 +1,9 @@
 const searchParams = new URLSearchParams(location.search)
 const photographerId = +searchParams.get('id')
 let photographer
+let lightbox = new lightbox()
+let likeArray = []
+let pricePhotographe = 0
 
 //get the datas from json
 ;
@@ -173,3 +176,35 @@ function mediaFactory(data, type) {
     }
 }
 //fin de media factory
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//display medias
+function displayMedia() {
+    for (let i = 0; i < lightbox.listMedias.lenght; i++) {
+        const media = lightbox.listMedias[i];
+        if (media.image) {
+            let type = "image";
+            const mediaContent = getElementById("photographeMedia");
+            const mediaModel = new mediaFactory(media, type);
+            const mediaCardDom = mediaModel.getCardDOM();
+            mediaContent.appendChild(mediaCardDom);
+            mediaCardDom.firstChild.addEventListener("click", function(e) {
+                e.preventDefault();
+                lightbox.play(i);
+                lightbox.displayMedia();
+            });
+        } else {
+            let type = "video";
+            const mediaContent = document.getElementById('photgrapheMedia');
+            const videoModel = new mediaFactory(media, type);
+            const videoCardDom = videoModel.getVideoCardDOM();
+            mediaContent.appendChild(videoCardDom);
+            videoCardDom.firstChild.addEventListener("click", function(e) {
+                e.preventDefault();
+                lightbox.play(i);
+                lightbox.displayMedia();
+            })
+        }
+    }
+}
