@@ -4,8 +4,10 @@
 <head>
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/567b043990.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
     <title>Fisheye - photographe </title>
 </head>
 
@@ -20,6 +22,7 @@
 
     <!--main-->
     <main id="main">
+        <!--photographes infos-->
         <div class="photograph-header">
             <div class="photograph_infos">
                 <h1></h1>
@@ -28,10 +31,14 @@
             </div>
             <button aria-label="Contactez moi" class="contact_button" onclick="displayModal()">Contactez-moi</button>
         </div>
-        <section id="photograph_medias"></section>
-        <div class="photograph_likeprice">
-            <span></span>
-            <span></span>
+        <!--fin de photographes infos-->
+
+        <!--medias-->
+        <div id="photographeMedia"></div>
+        <div id="all_Media_Like">
+            <p id="all_Likes"></p>
+            <i class="fas fa-heart" title="tous les likes du photographe"></i>
+            <p id="pricePhotographe"></p>
         </div>
     </main>
     <!--fin de main-->
