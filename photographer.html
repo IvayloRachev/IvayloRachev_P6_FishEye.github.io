@@ -43,8 +43,23 @@
     </main>
     <!--fin de main-->
 
+    <!--lightbox-->
+    <div class="lightbox" id="lightbox" role="dialog" aria-hidden="true">
+        <button class="lightbox_close">
+            <img src="./assets/icons/close.svg" alt="fermeture lightbox">
+        </button>
+        <button class="lightbox_prev">
+            <img src="./assets/icons/next.svg" alt="bouton précédent">
+        </button>
+        <button class="lightbox_next">
+            <img src="./assets/icons/next.svg" alt="bouton suivant">
+        </button>
+        <div class="lightbox_container"></div>
+        <p id="titre_photo"></p>
+    </div>
+
     <!--contact modal-->
-    <div id="contact_modal">
+    <div id="contact_modal" role="dialog" aria-hidden="true">
         <div class="modal">
             <header>
                 <h2>Contactez-moi</h2>
