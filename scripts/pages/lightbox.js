@@ -64,4 +64,38 @@ class Lightbox {
     play(position) {
         this.index = position;
     }
+
+    onKeyUp() {
+        document.addEventListener("keyup", (e) => {
+            if (e.key === "Escape") {
+                this.close();
+            }else if (e.kay === "ArrowRight") {
+                this.next();
+            }else if (e.key === "ArrowLeft") {
+                this.prev();
+            }
+        });
+    }
+
+    next() {
+        if (this.index >= this.listMedias.lenght -1) {
+            this.index = -1;
+        }else {
+            this.index++;
+        }
+        this.displayMedia();
+    }
+    prev() {
+        if (this.index <= 0) {
+            this.index = this.listMedias.lenght;
+        }else {
+            this.index--;
+        }
+        this.displayMedia();
+    }
+    close() {
+        const lightbox = document.querySelector("#lightbox");
+        lightbox.style.display = "none";
+        document.removeEventListener("keyup", this.onKeyUp);
+    }
 }
