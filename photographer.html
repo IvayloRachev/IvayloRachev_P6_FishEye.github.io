@@ -21,15 +21,10 @@
     <!--fin de header-->
 
     <!--main-->
-    <main id="main">
+    <main id="main" aria-hidden="false">
         <!--photographes infos-->
-        <div class="photograph-header">
-            <div class="photograph_infos">
-                <h1></h1>
-                <p></p>
-                <p></p>
-            </div>
-            <button aria-label="Contactez moi" class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <div class="photograph-header" id="profil">
+            <button aria-label="Contactez moi" class="contact_button" id="displayModal">Contactez-moi</button>
         </div>
         <!--fin de photographes infos-->
 
@@ -92,6 +87,10 @@
     <!--fin de contact modal-->
     <script src="./scripts/pages/photographer.js"></script>
     <script src="./scripts/utils/contactForm.js"></script>
+    <script src="./scripts/factories/images.js"></script>
+    <script src="./scripts/factories/videos.js"></script>
+    <script src="./scripts/factories/mediaFactory.js"></script>
+    <script src="./scripts/pages/lightbox.js"></script>
 </body>
 
 </html>
