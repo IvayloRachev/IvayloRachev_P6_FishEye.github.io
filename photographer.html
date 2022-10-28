@@ -15,7 +15,7 @@
     <!--header-->
     <header>
         <a href="./index.html">
-            <img src="assets/images/logo.png" class="logo" alt="Logo du site et bouton pour aller sur la page d'accueil" />
+            <img src="./assets/images/logo.png" class="logo" alt="Logo du site et bouton pour aller sur la page d'accueil" />
         </a>
     </header>
     <!--fin de header-->
@@ -32,6 +32,15 @@
             <button aria-label="Contactez moi" class="contact_button" onclick="displayModal()">Contactez-moi</button>
         </div>
         <!--fin de photographes infos-->
+
+        <!--to sort-->
+        <label for="sort" class="sort">Trier par:</label>
+        <select id="sort">
+            <option value="popular" id="popular">Populaire</option>
+            <option value="date" id="date">Date</option>
+            <option value="title" id="title">Titre</option>
+        </select>
+        <!--fi de to sort-->
 
         <!--medias-->
         <div id="photographeMedia"></div>
