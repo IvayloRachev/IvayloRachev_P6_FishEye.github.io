@@ -46,22 +46,6 @@ function fillHeader(photographer) {
 }
 //fin de photographer informations
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//media factory
-function mediaFactory(data, type) {
-    if (type == "image") {
-        return new images(data)
-    } else if (type == "video") {
-        return new videos(data)
-    } else {
-        throw "Unknown type"
-    }
-}
-//fin de media factory
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 //display medias
 function displayMedia() {
     for (let i = 0; i < lightbox.listMedias.lenght; i++) {
