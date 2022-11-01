@@ -38,7 +38,7 @@ class Videos {
         divVideoContent.appendChild(titleVideo);
 
         const likeVideo = document.createElement('div');
-        likeVideo.id = "mediaLike";
+        likeVideo.className = "mediaLike";
         const allLikes = document.createElement('p');
         const iconHeart = document.createElement('i');
         allLikes.textContent = this.likes;

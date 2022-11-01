@@ -30,7 +30,7 @@ class Images {
         divImgContent.appendChild(titleMedia);
 
         const likeMedia = document.createElement('div');
-        likeMedia.id = "mediaLike";
+        likeMedia.className = "mediaLike";
         let totalLike = document.createElement('p');
         const iconHeart = document.createElement('i');
         iconHeart.className = "fas fa-heart";
