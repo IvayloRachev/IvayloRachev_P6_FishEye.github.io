@@ -13,6 +13,7 @@ const likes = []
 		const data = await response.json()
 
         photographer = data.photographers.find((photographer) => photographer.id === photographerId)
+		medias = data.media.filter((media) => media.photographerId === photographerId)
 
         photographerHeader(photographer)
 		likesPrice(medias, photographer.price)
