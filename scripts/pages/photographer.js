@@ -14,6 +14,7 @@ const likes = []
 
         photographer = data.photographers.find((photographer) => photographer.id === photographerId)
 		medias = data.media.filter((media) => media.photographerId === photographerId)
+		photograph_medias.style.gridTemplateRows = 'repeat('+ Math.ceil(medias.lenght / 3) + ', 400px)'
 
         photographerHeader(photographer)
 		likesPrice(medias, photographer.price)
@@ -56,3 +57,60 @@ function likesPrice(medias, price) {
 	element.children[1].textContent = price + '€ / jour'
 }
 //fin de display all likes and price
+
+//display the medias and display modal
+function displayMedias(photographer, medias) {
+	const mediasSection = document.getElementById('photograph_medias')
+	mediasSection.innerHTML = ''
+
+	for (const media of medias) {
+		const article = document.createElement('article')
+		const link = document.createElement('a')
+		const mediaElement = media.video ? document.createElement('video') : document.createElement('img')
+		const divInfos = document.createElement('div')
+		const spanName = document.createElement('span')
+		const spanLike = document.createElement('span')
+
+		article.dataset.id = media.id
+		link.href = '#'
+		mediaElement.src = `./assets/images/${photographer.name}/${media.video ?? media.image}`
+		mediaElement.alt = media.title
+		mediaElement.controls = false
+		mediaElement.autoplay = false
+
+		spanName.textContent = media.title
+		spanLike.textContent = media.likes + ' ♥'
+		spanLike.classList.add('like')
+		spanLike.onclick = ({target}) => {
+			if (likes.includes(media.id)) {
+				return console.log('Ok')
+			}
+
+			const totalLikesElement = document.querySelector('.photograph_likeprice > span:first-child')
+
+			totalLikesElement.textContent = parseInt(totalLikesElement.textContent) + 1 + ' ♥'
+			target.textContent = parseInt(target.textContent) + 1 + ' ♥'
+			likes.push(media.id)
+		}
+
+		//display modal
+		link.onclick = (event) => {
+			event.preventDefault()
+			if (event.target.classList.contains('like')) return
+			media_modal.children[media_modal.children.length - 1].appendChild(mediaElement.cloneNode())
+			media_modal.children[media_modal.children.length - 1].children[0].controls = true
+			media_modal.children[media_modal.children.length - 1].appendChild(spanName.cloneNode(true))
+			media_modal.style.display = 'inherit'
+			document.body.style.overflow = 'hidden'
+		}
+		//fin de display modal
+
+		link.appendChild(article)
+		article.appendChild(mediaElement)
+		article.appendChild(divInfos)
+		divInfos.appendChild(spanName)
+		divInfos.appendChild(spanLike)
+		mediasSection.appendChild(link)
+	}
+}
+//fin de display the medias and display modal
