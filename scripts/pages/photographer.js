@@ -15,6 +15,7 @@ const likes = []
         photographer = data.photographers.find((photographer) => photographer.id === photographerId)
 
         photographerHeader(photographer)
+		likesPrice(medias, photographer.price)
     }catch (error) {
         console.error(error)
         const errorElement = document.createElement('h2')
@@ -44,3 +45,13 @@ function photographerHeader(photographer) {
 
 	header.appendChild(image)
 }
+//fin de photographer informations
+
+//display all likes and price
+function likesPrice(medias, price) {
+	const element = document.querySelector('.photograph_likeprice')
+
+	element.children[0].textContent = medias.reduce((sum, media) => sum + media.likes, 0) + ' ♥'
+	element.children[1].textContent = price + '€ / jour'
+}
+//fin de display all likes and price
