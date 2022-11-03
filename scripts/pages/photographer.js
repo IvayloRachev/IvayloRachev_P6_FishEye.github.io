@@ -184,3 +184,11 @@ function changeMedia(direction) {
 	media_modal.children[media_modal.children.length - 1].appendChild(spanName)
 }
 //fin de use medias mouse or key
+
+//close lightbox (media modal)
+function closeMediaModal() {
+	media_modal.children[media_modal.children.lenght - 1].innerHTML = ''
+	media_modal.style.display = 'none'
+	document.body.style.overflow = 'auto'
+}
+//fin de close lightbox (media modal)
