@@ -19,6 +19,28 @@ const likes = []
         photographerHeader(photographer)
 		likesPrice(medias, photographer.price)
 		orderMedias(photographer)
+		addEventListener('keydown', (e) => {
+			if (media_modal.style.display && media_modal.style.display !== 'none') {
+				if (e.code === 'ArrowLeft') {
+					return changeMedia('left')
+				}
+				if (e.code === 'ArrowRight') {
+					return changeMedia('right')
+				}
+				if (e.code === 'Escape') {
+					return closeMediaModal()
+				}
+			}
+			if (contact_modal.style.display && contact_modal.style.display !== 'none') {
+				if (e.code === 'Escape') {
+					contact_modal.style.display = 'none'
+				}
+			}
+		})
+		orderSelect.onchange = ({target: {value}}) => orderMedias(photographer, value)
+
+		const contactTitle = document.querySelector('#contact_modal h2')
+		contactTitle.textContent += ' ' + photographer.name
     }catch (error) {
         console.error(error)
         const errorElement = document.createElement('h2')
