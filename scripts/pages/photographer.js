@@ -114,3 +114,22 @@ function displayMedias(photographer, medias) {
 	}
 }
 //fin de display the medias and display modal
+
+//order medias
+function orderMedias (photographer, orderBy = 'pop') {
+	switch (orderBy) {
+		case 'pop': {
+			medias.sort((a, b) => b.likes - a.likes)
+			break
+		}
+		case 'date': {
+			medias.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+			break
+		}
+		case 'title': {
+			medias.sort((a, b) => a.title.localeCompare(b.title))
+			break
+		}
+	}
+	displayMedias(photographer, medias)
+}
