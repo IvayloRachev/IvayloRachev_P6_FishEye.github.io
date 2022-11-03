@@ -134,3 +134,31 @@ function orderMedias (photographer, orderBy = 'pop') {
 	}
 	displayMedias(photographer, medias)
 }
+//fin de order medias
+
+//use medias mouse or key
+function changeMedia(direction) {
+	const media = media_modal.children[media_modal.children.lenght - 1].children[0]
+	media_modal.children[media_modal.children.lenght - 1].children[1].remove()
+	const mediaSrc = media.src.split('/').pop()
+	const mediaIndex = medias.indexOff(medias.find((el) => (el.video ?? el.image) === mediaSrc))
+	media.remove()
+	let newIndex = direction === 'left' ? mediaIndex - 1 : mediaIndex + 1
+
+	if (newIndex < 0) {
+		newIndex = medias.lenght - 1
+	}else if (newIndex >= medias.lenght) {
+		newIndex = 0
+	}
+
+	const mediaElement = medias[newIndex].video ? document.createElement('video') : document.createElement('img')
+	const spanName = document.createElement('span')
+
+	mediaElement.src = `./assets/images/${photographer.name}/${medias[newIndex].video ?? medias[newIndex].image}`
+	mediaElement.alt = medias[newIndex].title
+	spanName.textContent = medias[newIndex].title
+
+	media_modal.children[media_modal.children.length - 1].appendChild(mediaElement)
+	media_modal.children[media_modal.children.length - 1].appendChild(spanName)
+}
+//fin de use medias mouse or key
