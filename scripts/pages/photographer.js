@@ -18,6 +18,7 @@ const likes = []
 
         photographerHeader(photographer)
 		likesPrice(medias, photographer.price)
+		orderMedias(photographer)
     }catch (error) {
         console.error(error)
         const errorElement = document.createElement('h2')
