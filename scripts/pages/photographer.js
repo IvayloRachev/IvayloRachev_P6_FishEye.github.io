@@ -14,7 +14,7 @@ const likes = []
 
         photographer = data.photographers.find((photographer) => photographer.id === photographerId)
 		medias = data.media.filter((media) => media.photographerId === photographerId)
-		photograph_medias.style.gridTemplateRows = 'repeat('+ Math.ceil(medias.lenght / 3) + ', 400px)'
+		photograph_medias.style.gridTemplateRows = 'repeat(' + Math.ceil(medias.lenght / 3) + ', 400px)'
 
         photographerHeader(photographer)
 		likesPrice(medias, photographer.price)
