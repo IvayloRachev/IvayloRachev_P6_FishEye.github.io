@@ -160,16 +160,16 @@ function orderMedias (photographer, orderBy = 'pop') {
 
 //use medias mouse or key
 function changeMedia(direction) {
-	const media = media_modal.children[media_modal.children.lenght - 1].children[0]
-	media_modal.children[media_modal.children.lenght - 1].children[1].remove()
+	const media = media_modal.children[media_modal.children.length - 1].children[0]
+	media_modal.children[media_modal.children.length - 1].children[1].remove()
 	const mediaSrc = media.src.split('/').pop()
-	const mediaIndex = medias.indexOff(medias.find((el) => (el.video ?? el.image) === mediaSrc))
+	const mediaIndex = medias.indexOf(medias.find((el) => (el.video ?? el.image) === mediaSrc))
 	media.remove()
 	let newIndex = direction === 'left' ? mediaIndex - 1 : mediaIndex + 1
 
 	if (newIndex < 0) {
-		newIndex = medias.lenght - 1
-	}else if (newIndex >= medias.lenght) {
+		newIndex = medias.length - 1
+	} else if (newIndex >= medias.length) {
 		newIndex = 0
 	}
 
@@ -187,7 +187,7 @@ function changeMedia(direction) {
 
 //close lightbox (media modal)
 function closeMediaModal() {
-	media_modal.children[media_modal.children.lenght - 1].innerHTML = ''
+	media_modal.children[media_modal.children.length - 1].innerHTML = ''
 	media_modal.style.display = 'none'
 	document.body.style.overflow = 'auto'
 }
