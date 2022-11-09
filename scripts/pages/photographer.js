@@ -99,6 +99,7 @@ function displayMedias(photographer, medias) {
 		const spanName = document.createElement('span')
 		const spanLike = document.createElement('span')
 		const btnLike = document.createElement('button')
+		btnLike.setAttribute('aria-label', "bouton j'aime")
 
 		article.dataset.id = media.id
 		link.href = '#'
