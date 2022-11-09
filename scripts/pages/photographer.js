@@ -1,6 +1,5 @@
 const searchParams = new URLSearchParams(location.search)
 const photographerId = +searchParams.get('id')
-let orderBy = 'pop'
 let photographer
 let medias
 const media_modal = document.getElementById('media_modal')
@@ -147,7 +146,7 @@ function displayMedias(photographer, medias) {
 //fin de display the medias and display modal
 
 //order medias
-function orderMedias (photographer) {
+function orderMedias (photographer, orderBy) {
 	switch (orderBy) {
 		case 'pop': {
 			medias.sort((a, b) => b.likes - a.likes)
