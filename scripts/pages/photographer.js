@@ -146,7 +146,7 @@ function displayMedias(photographer, medias) {
 //fin de display the medias and display modal
 
 //order medias
-function orderMedias (photographer, orderBy) {
+function orderMedias (photographer, orderBy = 'pop') {
 	switch (orderBy) {
 		case 'pop': {
 			medias.sort((a, b) => b.likes - a.likes)
