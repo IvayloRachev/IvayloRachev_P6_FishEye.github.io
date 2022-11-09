@@ -161,8 +161,12 @@
     justify-content: space-between;
 }
 
-#photograph_medias div span:last-child {
+#photograph_medias div button {
     cursor: pointer;
+    color: #901C1C;
+    border: none;
+    background-color: transparent;
+    font-size: 1em;
 }
 
 .photograph_likeprice {

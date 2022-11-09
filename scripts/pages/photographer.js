@@ -98,6 +98,7 @@ function displayMedias(photographer, medias) {
 		const divInfos = document.createElement('div')
 		const spanName = document.createElement('span')
 		const spanLike = document.createElement('span')
+		const btnLike = document.createElement('button')
 
 		article.dataset.id = media.id
 		link.href = '#'
@@ -107,9 +108,9 @@ function displayMedias(photographer, medias) {
 		mediaElement.autoplay = false
 
 		spanName.textContent = media.title
-		spanLike.textContent = media.likes + ' ♥'
-		spanLike.classList.add('like')
-		spanLike.onclick = ({target}) => {
+		btnLike.textContent = media.likes + ' ♥'
+		btnLike.classList.add('like')
+		btnLike.onclick = ({target}) => {
 			if (likes.includes(media.id)) {
 				return console.log('Ok')
 			}
@@ -133,6 +134,7 @@ function displayMedias(photographer, medias) {
 		}
 		//fin de display modal
 
+		spanLike.appendChild(btnLike)
 		link.appendChild(article)
 		article.appendChild(mediaElement)
 		article.appendChild(divInfos)
