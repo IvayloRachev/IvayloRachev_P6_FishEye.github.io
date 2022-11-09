@@ -3,6 +3,11 @@ const photographerId = +searchParams.get('id')
 let orderBy = 'pop'
 let photographer
 let medias
+const media_modal = document.getElementById('media_modal')
+const contact_modal = document.getElementById('contact_modal')
+const main = document.getElementById('main')
+const orderSelect = document.getElementById('orderSelect')
+const photograph_medias = document.getElementById('photograph_medias')
 const likes = []
 
 
@@ -139,7 +144,7 @@ function displayMedias(photographer, medias) {
 //fin de display the medias and display modal
 
 //order medias
-function orderMedias (photographer, orderBy = 'pop') {
+function orderMedias (photographer) {
 	switch (orderBy) {
 		case 'pop': {
 			medias.sort((a, b) => b.likes - a.likes)
