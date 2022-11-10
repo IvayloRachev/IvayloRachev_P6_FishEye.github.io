@@ -30,6 +30,32 @@
 			</div>
             <!--fin de infos photographes-->
 
+		<!--modal-->
+		<div id="contact_modal">
+			<div class="modal">
+				<header>
+					<h2>Contactez-moi</h2>
+					<img src="./assets/icons/close.svg" alt="Fermez le formulaire de contact" onclick="closeModal()" />
+				</header>
+				<form onsubmit="sendMessage(event)">
+					<div role="dialog" aria-labelledby="formulaire de contact" aria-describedby="formulaire de contact" aria-modal="true" aria-hidden="true" tabindex="-1">
+						<div role="document">
+							<label for="firstName">Prénom</label>
+							<input id="firstName" name="firstName" />
+							<label for="lastName">Nom</label>
+							<input id="lastName" name="lastName" />
+							<label for="email">Email</label>
+							<input id="email" name="email" />
+							<label for="message">Message</label>
+							<textarea id="message" name="message"></textarea>
+						</div>
+					</div>
+					<button class="contact_button" aria-label="Envoyez">Envoyer</button>
+				</form>
+			</div>
+		</div>
+        <!--fin de modal-->
+
             <!--order system-->
 			<div id="select">
 				<label for="orderSelect">Trier par</label>
@@ -50,30 +76,6 @@
             <!--fin de all likes and price-->
 		</main>
         <!--fin de main-->
-
-        <!--modal-->
-		<div id="contact_modal">
-			<div class="modal">
-				<header>
-					<h2>Contactez-moi</h2>
-					<img src="./assets/icons/close.svg" alt="Fermez le formulaire de contact" onclick="closeModal()" />
-				</header>
-				<form onsubmit="sendMessage(event)">
-					<div>
-						<label for="firstName">Prénom</label>
-						<input id="firstName" name="firstName" />
-						<label for="lastName">Nom</label>
-						<input id="lastName" name="lastName" />
-						<label for="email">Email</label>
-						<input id="email" name="email" />
-						<label for="message">Message</label>
-						<textarea id="message" name="message"></textarea>
-					</div>
-					<button class="contact_button" aria-label="Envoyez">Envoyer</button>
-				</form>
-			</div>
-		</div>
-        <!--fin de modal-->
 
         <!--media modal-->
 		<div id="media_modal" aria-label="Media modal">
