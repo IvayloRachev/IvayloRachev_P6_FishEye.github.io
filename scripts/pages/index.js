@@ -5,6 +5,7 @@
             const data = await response.json()
             return data
         } catch (error) {
+            let main = document.getElementById('main')
             console.error(error)
             const errorElement = document.createElement('h2')
             errorElement.classList.add('photographers_error')
@@ -24,14 +25,14 @@
             const userCardDOM = photographerModel.getUserCardDOM();
             photographersSection.appendChild(userCardDOM);
         });
-    };
+    }
     //fin to display photographer informations
 
     //take photographers datas
     async function init() {
         const { photographers } = await getPhotographers();
         displayData(photographers);
-    };
+    }
 
     init();
     //fin de take photographers datas
