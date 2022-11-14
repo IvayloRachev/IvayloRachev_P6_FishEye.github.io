@@ -1,4 +1,4 @@
-const searchParams = new URLSearchParams(location.search)
+const  searchParams = new URLSearchParams(location.search)
 const photographerId = +searchParams.get('id')
 let photographer
 let medias
