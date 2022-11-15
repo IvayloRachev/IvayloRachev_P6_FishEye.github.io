@@ -2,11 +2,11 @@ const  searchParams = new URLSearchParams(location.search)
 const photographerId = +searchParams.get('id')
 let photographer
 let medias
-const media_modal = document.getElementById('media_modal')
-const contact_modal = document.getElementById('contact_modal')
-const main = document.getElementById('main')
-const orderSelect = document.getElementById('orderSelect')
-const photograph_medias = document.getElementById('photograph_medias')
+const media_modal = document.querySelector('#media_modal')
+const contact_modal = document.querySelector('#contact_modal')
+const main = document.querySelector('#main')
+const orderSelect = document.querySelector('#orderSelect')
+const photograph_medias = document.querySelector('#photograph_medias')
 const likes = []
 
 
@@ -132,7 +132,10 @@ function displayMedias(photographer, medias) {
 			media_modal.children[media_modal.children.length - 1].appendChild(spanName.cloneNode(true))
 			media_modal.style.display = 'inherit'
 			document.body.style.overflow = 'hidden'
+			document.body.setAttribute('aria-hidden', 'true')
+			media_modal.focus()
 		}
+
 		//fin de display modal
 
 		spanLike.appendChild(btnLike)

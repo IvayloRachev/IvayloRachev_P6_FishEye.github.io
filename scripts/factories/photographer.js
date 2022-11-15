@@ -23,5 +23,4 @@ function photographerFactory(data) {
     }
     return { getUserCardDOM }
 }
-photographerFactory
 //fin de function to create and display the photographers informations on index page
