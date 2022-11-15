@@ -79,6 +79,8 @@ function photographerHeader(photographer) {
 //display all likes and price
 function likesPrice(medias, price) {
 	const element = document.querySelector('.photograph_likeprice')
+	element.children[0].setAttribute('aria-label', medias.reduce((sum, media) => sum + media.likes, 0) + 'likes')
+	element.children[1].setAttribute('aria-label', price + '€ par jour')
 
 	element.children[0].textContent = medias.reduce((sum, media) => sum + media.likes, 0) + ' ♥'
 	element.children[1].textContent = price + '€ / jour'

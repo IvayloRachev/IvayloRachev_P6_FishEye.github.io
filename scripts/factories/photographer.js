@@ -14,9 +14,9 @@ function photographerFactory(data) {
                 <h2 class="name">${name}</h2>
             </a>
             <div role="presentation" aria-label="informations photographes" tabindex="0">
-                <p>${city}, ${country}</p>
-                <p>${tagline}</p>
-                <p>${price} €/jour</p>
+                <p tabindex="0">${city}, ${country}</p>
+                <p tabindex="0">${tagline}</p>
+                <p tabindex="0" aria-label="${price} € par jour">${price} €/jour</p>
             </div>`
 
         return (article);
