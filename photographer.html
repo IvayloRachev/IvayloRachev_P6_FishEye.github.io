@@ -38,8 +38,7 @@
 					<img src="./assets/icons/close.svg" alt="Fermez le formulaire de contact" onclick="closeModal()" />
 				</header>
 				<form onsubmit="sendMessage(event)">
-					<div role="dialog" aria-labelledby="formulaire de contact" aria-describedby="formulaire de contact" aria-modal="true" aria-hidden="true" tabindex="-1">
-						<div role="document">
+					<div>
 							<label for="firstName">Prénom</label>
 							<input id="firstName" name="firstName" />
 							<label for="lastName">Nom</label>
@@ -48,7 +47,6 @@
 							<input id="email" name="email" />
 							<label for="message">Message</label>
 							<textarea id="message" name="message"></textarea>
-						</div>
 					</div>
 					<button class="contact_button" aria-label="Envoyez">Envoyer</button>
 				</form>
