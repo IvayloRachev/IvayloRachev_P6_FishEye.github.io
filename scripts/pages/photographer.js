@@ -3,9 +3,9 @@ const photographerId = +searchParams.get('id')
 let photographer
 let medias
 const media_modal = document.getElementById('media_modal')
-const leftArrow = document.getElementById('left-arrow')
-const rightArrow = document.getElementById('right-arrow')
-const closeButton = document.getElementById('close-button')
+//const leftArrow = document.getElementById('left-arrow')
+//const rightArrow = document.getElementById('right-arrow')
+//const closeButton = document.getElementById('close-button')
 const contact_modal = document.querySelector('#contact_modal')
 const main = document.querySelector('#main')
 const orderSelect = document.querySelector('#orderSelect')
@@ -137,9 +137,9 @@ function displayMedias(photographer, medias) {
 			document.body.style.overflow = 'hidden'
 			document.body.setAttribute('aria-hidden', 'true')
 			media_modal.focus()
-			leftArrow.focus()
-			rightArrow.focus()
-			closeButton.focus()
+			//leftArrow.focus()
+			//rightArrow.focus()
+			//closeButton.focus()
 		}
 
 		//fin de display modal
