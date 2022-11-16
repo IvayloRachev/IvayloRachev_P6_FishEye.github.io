@@ -248,3 +248,7 @@ form textarea {
     border: none;
     border-radius: 5px;
 }
+
+[aria-hidden="true"]{
+    display: none;
+   }

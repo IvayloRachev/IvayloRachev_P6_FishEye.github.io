@@ -5,13 +5,15 @@ let medias
 const media_modal = document.getElementById('media_modal')
 //const leftArrow = document.getElementById('left-arrow')
 //const rightArrow = document.getElementById('right-arrow')
-//const closeButton = document.getElementById('close-button')
+const closeButton = document.getElementById('close-button')
 const contact_modal = document.querySelector('#contact_modal')
-const main = document.querySelector('#main')
+const main = document.querySelector('main')
+const header = document.querySelector('header')
+//const main = document.querySelector('#main')
+//const header = document.querySelector('#header')
 const orderSelect = document.querySelector('#orderSelect')
 const photograph_medias = document.querySelector('#photograph_medias')
 const likes = []
-
 
 //API fetch
 ;(async () => {
@@ -135,11 +137,14 @@ function displayMedias(photographer, medias) {
 			media_modal.children[media_modal.children.length - 1].appendChild(spanName.cloneNode(true))
 			media_modal.style.display = 'inherit'
 			document.body.style.overflow = 'hidden'
-			document.body.setAttribute('aria-hidden', 'true')
+			//document.body.setAttribute('aria-hidden', 'true')
 			media_modal.focus()
 			//leftArrow.focus()
 			//rightArrow.focus()
-			//closeButton.focus()
+			closeButton.focus()
+			main.setAttribute('aria-hidden', 'true')
+			header.setAttribute('aria-hidden', 'true')
+			media_modal.setAttribute('aria-hidden', 'false')
 		}
 
 		//fin de display modal
@@ -207,5 +212,8 @@ function closeMediaModal() {
 	media_modal.children[media_modal.children.length - 1].innerHTML = ''
 	media_modal.style.display = 'none'
 	document.body.style.overflow = 'auto'
+	main.setAttribute('aria-hidden', 'false')
+	header.setAttribute('aria-hidden', 'false')
+	media_modal.setAttribute('aria-hidden', 'true')
 }
 //fin de close lightbox (media modal)
