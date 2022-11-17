@@ -8,7 +8,7 @@
 		<title>Fisheye - photographe</title>
 	</head>
 
-	<body aria-hidden="false">
+	<body>
         <!--header-->
 		<header id="header">
 			<a href="./index.html">
@@ -16,30 +16,6 @@
 			</a>
 		</header>
         <!--fin de header-->
-
-		<!--modal-->
-		<div id="contact_modal" role="dialog" aria-hidden="true">
-			<div class="modal">
-				<header>
-					<h2 tabindex="0">Contactez-moi</h2>
-					<img id="closeModal" src="./assets/icons/close.svg" alt="Fermez le formulaire de contact" tabindex="0" onclick="closeModal()" />
-				</header>
-				<form onsubmit="sendMessage(event)">
-					<div>
-							<label for="firstName">Prénom</label>
-							<input id="firstName" name="firstName" />
-							<label for="lastName">Nom</label>
-							<input id="lastName" name="lastName" />
-							<label for="email">Email</label>
-							<input id="email" name="email" />
-							<label for="message">Message</label>
-							<textarea id="message" name="message"></textarea>
-					</div>
-					<button class="contact_button" aria-label="Envoyez">Envoyer</button>
-				</form>
-			</div>
-		</div>
-        <!--fin de modal-->
 
         <!--main-->
 		<main id="main">
@@ -77,6 +53,30 @@
             <!--fin de all likes and price-->
 		</main>
         <!--fin de main-->
+
+		<!--modal-->
+		<div id="contact_modal" role="dialog" aria-hidden="true" aria-modal="true" aria-labelledby="contactModal">
+			<div class="modal">
+				<header>
+					<h2 tabindex="0">Contactez-moi</h2>
+					<img id="closeModal" src="./assets/icons/close.svg" alt="" aria-label="Fermez le formulaire de contact" title="Fermez la modal" tabindex="0" onclick="closeModal()" />
+				</header>
+				<form onsubmit="sendMessage(event)">
+					<div>
+							<label for="firstName">Prénom</label>
+							<input type="text" id="firstName" name="firstName" />
+							<label for="lastName">Nom</label>
+							<input type="text" id="lastName" name="lastName" />
+							<label for="email">Email</label>
+							<input type="text" id="email" name="email" />
+							<label for="message">Message</label>
+							<textarea id="message" name="message"></textarea>
+					</div>
+					<button class="contact_button" aria-label="Envoyez">Envoyer</button>
+				</form>
+			</div>
+		</div>
+		<!--fin de modal-->
 
 		<!--media modal-->
 		<div id="media_modal" aria-label="Media modal" role="dialog" tabindex="0" aria-hidden="true">
