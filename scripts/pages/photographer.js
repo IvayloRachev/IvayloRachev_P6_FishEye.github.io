@@ -2,12 +2,12 @@ const  searchParams = new URLSearchParams(location.search)
 const photographerId = +searchParams.get('id')
 let photographer
 let medias
-const media_modal = document.getElementById('media_modal')
-//const leftArrow = document.getElementById('left-arrow')
+const media_modal = document.querySelector('#media_modal')
+const leftArrow = document.getElementById('left-arrow')
 //const rightArrow = document.getElementById('right-arrow')
 const closeButton = document.getElementById('close-button')
 const contact_modal = document.querySelector('#contact_modal')
-const main = document.querySelector('main')
+const main = document.querySelector('#main')
 const header = document.querySelector('header')
 //const main = document.querySelector('#main')
 //const header = document.querySelector('#header')
@@ -138,13 +138,45 @@ function displayMedias(photographer, medias) {
 			media_modal.style.display = 'inherit'
 			document.body.style.overflow = 'hidden'
 			//document.body.setAttribute('aria-hidden', 'true')
-			media_modal.focus()
+			//media_modal.focus()
 			//leftArrow.focus()
 			//rightArrow.focus()
-			closeButton.focus()
+			//closeButton.focus()
 			main.setAttribute('aria-hidden', 'true')
 			header.setAttribute('aria-hidden', 'true')
 			media_modal.setAttribute('aria-hidden', 'false')
+			const keyCodes = {
+				tab: 9,
+				enter: 13,
+				esape: 27,
+			}
+			window.setTimeout(() =>{
+				closeButton.focus()
+				
+			media_modal.forEach((media_modals) => {
+				if (media_modals.addEventListener) {
+					media_modals.addEventListener('keydown', (event) => {
+						const tab = event.which === keyCodes.tab
+
+						if (!tab) {
+							return
+						}
+
+						if (event.shiftKey) {
+							if (event.target === closeButton) {
+								event.preventDefault()
+
+								leftArrow.focus()
+							}
+						}else if (event.target === leftArrow) {
+							event.preventDefault()
+
+							closeButton.focus
+						}
+					})
+				}
+			})
+		})
 		}
 
 		//fin de display modal
