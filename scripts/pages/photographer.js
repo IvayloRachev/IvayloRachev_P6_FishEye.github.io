@@ -3,7 +3,7 @@ const photographerId = +searchParams.get('id')
 let photographer
 let medias
 const lightbox = document.getElementById('media_modal')
-//const leftArrow = document.getElementById('left-arrow')
+const leftArrow = document.getElementById('left-arrow')
 //const rightArrow = document.getElementById('right-arrow')
 //const closeButton = document.getElementById('close-button')
 const contact_modal = document.querySelector('#contact_modal')
@@ -139,41 +139,13 @@ function displayMedias(photographer, medias) {
 			//document.body.style.overflow = 'hidden'
 			//document.body.setAttribute('aria-hidden', 'true')
 			//media_modal.focus()
-			//leftArrow.focus()
+			leftArrow.focus()
 			//rightArrow.focus()
 			//closeButton.focus()
 			main.setAttribute('aria-hidden', 'true')
 			header.setAttribute('aria-hidden', 'true')
 			lightbox.setAttribute('aria-hidden', 'false')
 			
-
-			function elementFocus() {
-				let focusableElements = lightbox.querySelectorAll('#media_modal, #left-arrow, #right-arrow, #close-button');
-				focusableElements = Array.prototype.slice.call(focusableElements);
-	
-				let firstElement = focusableElements[0];
-				let lastElement = focusableElements[focusableElements.length - 1]
-				firstElement.focus();
-				lightbox.addEventListener('keydown', trapTabKey);
-				function trapTabKey(e) {
-					let isTabPressed = e.key === 'tab';
-					if (!isTabPressed) {
-						return;
-					}
-					if (e.shiftKey) {
-						if (document.activeElement === firstElement) {
-							lastElement.focus();
-							e.preventDefault();
-						}
-					}else {
-						if (document.activeElement === lastElement) {
-							firstElement.focus();
-							e.preventDefault();
-						}
-					}
-				}
-			}
-			return elementFocus();
 		}
 		//fin de display modal
 
