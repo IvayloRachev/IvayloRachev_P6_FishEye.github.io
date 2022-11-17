@@ -145,6 +145,10 @@ function displayMedias(photographer, medias) {
 			main.setAttribute('aria-hidden', 'true')
 			header.setAttribute('aria-hidden', 'true')
 			lightbox.setAttribute('aria-hidden', 'false')
+
+			//const focusableElements = lightbox.querySelectorAll('#left-arrow, #right-arrow, close-button')
+			//const firstElement = focusableElements[0]
+			//const lastElement = focusableElements[focusableElements.length - 1]
 			
 		}
 		//fin de display modal
