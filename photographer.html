@@ -17,25 +17,12 @@
 		</header>
         <!--fin de header-->
 
-        <!--main-->
-		<main id="main">
-            <!--infos photographes-->
-			<div class="photograph-header">
-				<div class="photograph_infos">
-					<h1></h1>
-					<p></p>
-					<p></p>
-				</div>
-				<button aria-label="Contactez-moi" class="contact_button" onclick="displayModal()">Contactez-moi</button>
-			</div>
-            <!--fin de infos photographes-->
-
 		<!--modal-->
-		<div id="contact_modal">
+		<div id="contact_modal" role="dialog" aria-hidden="true">
 			<div class="modal">
 				<header>
-					<h2>Contactez-moi</h2>
-					<img src="./assets/icons/close.svg" alt="Fermez le formulaire de contact" onclick="closeModal()" />
+					<h2 tabindex="0">Contactez-moi</h2>
+					<img id="closeModal" src="./assets/icons/close.svg" alt="Fermez le formulaire de contact" tabindex="0" onclick="closeModal()" />
 				</header>
 				<form onsubmit="sendMessage(event)">
 					<div>
@@ -53,6 +40,19 @@
 			</div>
 		</div>
         <!--fin de modal-->
+
+        <!--main-->
+		<main id="main">
+            <!--infos photographes-->
+			<div class="photograph-header">
+				<div class="photograph_infos">
+					<h1></h1>
+					<p></p>
+					<p></p>
+				</div>
+				<button aria-label="Contactez-moi" class="contact_button" onclick="displayModal()">Contactez-moi</button>
+			</div>
+            <!--fin de infos photographes-->
 
             <!--order system-->
 			<div id="select">

@@ -2,13 +2,13 @@ const  searchParams = new URLSearchParams(location.search)
 const photographerId = +searchParams.get('id')
 let photographer
 let medias
-const media_modal = document.querySelector('#media_modal')
-const leftArrow = document.getElementById('left-arrow')
+const lightbox = document.getElementById('media_modal')
+//const leftArrow = document.getElementById('left-arrow')
 //const rightArrow = document.getElementById('right-arrow')
-const closeButton = document.getElementById('close-button')
+//const closeButton = document.getElementById('close-button')
 const contact_modal = document.querySelector('#contact_modal')
 const main = document.querySelector('#main')
-const header = document.querySelector('header')
+const header = document.querySelector('#header')
 //const main = document.querySelector('#main')
 //const header = document.querySelector('#header')
 const orderSelect = document.querySelector('#orderSelect')
@@ -29,7 +29,7 @@ const likes = []
 		likesPrice(medias, photographer.price)
 		orderMedias(photographer)
 		addEventListener('keydown', (e) => {
-			if (media_modal.style.display && media_modal.style.display !== 'none') {
+			if (lightbox.style.display && lightbox.style.display !== 'none') {
 				if (e.code === 'ArrowLeft') {
 					return changeMedia('left')
 				}
@@ -132,11 +132,11 @@ function displayMedias(photographer, medias) {
 		link.onclick = (event) => {
 			event.preventDefault()
 			if (event.target.classList.contains('like')) return
-			media_modal.children[media_modal.children.length - 1].appendChild(mediaElement.cloneNode())
-			media_modal.children[media_modal.children.length - 1].children[0].controls = true
-			media_modal.children[media_modal.children.length - 1].appendChild(spanName.cloneNode(true))
-			media_modal.style.display = 'inherit'
-			document.body.style.overflow = 'hidden'
+			lightbox.children[lightbox.children.length - 1].appendChild(mediaElement.cloneNode())
+			lightbox.children[lightbox.children.length - 1].children[0].controls = true
+			lightbox.children[lightbox.children.length - 1].appendChild(spanName.cloneNode(true))
+			lightbox.style.display = 'inherit'
+			//document.body.style.overflow = 'hidden'
 			//document.body.setAttribute('aria-hidden', 'true')
 			//media_modal.focus()
 			//leftArrow.focus()
@@ -144,41 +144,37 @@ function displayMedias(photographer, medias) {
 			//closeButton.focus()
 			main.setAttribute('aria-hidden', 'true')
 			header.setAttribute('aria-hidden', 'true')
-			media_modal.setAttribute('aria-hidden', 'false')
-			const keyCodes = {
-				tab: 9,
-				enter: 13,
-				esape: 27,
-			}
-			window.setTimeout(() =>{
-				closeButton.focus()
-				
-			media_modal.forEach((media_modals) => {
-				if (media_modals.addEventListener) {
-					media_modals.addEventListener('keydown', (event) => {
-						const tab = event.which === keyCodes.tab
+			lightbox.setAttribute('aria-hidden', 'false')
+			
 
-						if (!tab) {
-							return
+			function elementFocus() {
+				let focusableElements = lightbox.querySelectorAll('#media_modal, #left-arrow, #right-arrow, #close-button');
+				focusableElements = Array.prototype.slice.call(focusableElements);
+	
+				let firstElement = focusableElements[0];
+				let lastElement = focusableElements[focusableElements.length - 1]
+				firstElement.focus();
+				lightbox.addEventListener('keydown', trapTabKey);
+				function trapTabKey(e) {
+					let isTabPressed = e.key === 'tab';
+					if (!isTabPressed) {
+						return;
+					}
+					if (e.shiftKey) {
+						if (document.activeElement === firstElement) {
+							lastElement.focus();
+							e.preventDefault();
 						}
-
-						if (event.shiftKey) {
-							if (event.target === closeButton) {
-								event.preventDefault()
-
-								leftArrow.focus()
-							}
-						}else if (event.target === leftArrow) {
-							event.preventDefault()
-
-							closeButton.focus
+					}else {
+						if (document.activeElement === lastElement) {
+							firstElement.focus();
+							e.preventDefault();
 						}
-					})
+					}
 				}
-			})
-		})
+			}
+			return elementFocus();
 		}
-
 		//fin de display modal
 
 		spanLike.appendChild(btnLike)
@@ -214,8 +210,8 @@ function orderMedias (photographer, orderBy = 'pop') {
 
 //use medias mouse or key
 function changeMedia(direction) {
-	const media = media_modal.children[media_modal.children.length - 1].children[0]
-	media_modal.children[media_modal.children.length - 1].children[1].remove()
+	const media = lightbox.children[lightbox.children.length - 1].children[0]
+	lightbox.children[lightbox.children.length - 1].children[1].remove()
 	const mediaSrc = media.src.split('/').pop()
 	const mediaIndex = medias.indexOf(medias.find((el) => (el.video ?? el.image) === mediaSrc))
 	media.remove()
@@ -234,18 +230,18 @@ function changeMedia(direction) {
 	mediaElement.alt = medias[newIndex].title
 	spanName.textContent = medias[newIndex].title
 
-	media_modal.children[media_modal.children.length - 1].appendChild(mediaElement)
-	media_modal.children[media_modal.children.length - 1].appendChild(spanName)
+	lightbox.children[lightbox.children.length - 1].appendChild(mediaElement)
+	lightbox.children[lightbox.children.length - 1].appendChild(spanName)
 }
 //fin de use medias mouse or key
 
 //close lightbox (media modal)
 function closeMediaModal() {
-	media_modal.children[media_modal.children.length - 1].innerHTML = ''
-	media_modal.style.display = 'none'
+	lightbox.children[lightbox.children.length - 1].innerHTML = ''
+	lightbox.style.display = 'none'
 	document.body.style.overflow = 'auto'
 	main.setAttribute('aria-hidden', 'false')
 	header.setAttribute('aria-hidden', 'false')
-	media_modal.setAttribute('aria-hidden', 'true')
+	lightbox.setAttribute('aria-hidden', 'true')
 }
 //fin de close lightbox (media modal)
