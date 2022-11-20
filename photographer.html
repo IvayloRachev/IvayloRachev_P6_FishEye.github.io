@@ -26,7 +26,7 @@
 					<p></p>
 					<p></p>
 				</div>
-				<button aria-label="Contactez-moi" class="contact_button" onclick="displayModal()">Contactez-moi</button>
+				<button aria-label="Contactez-moi" class="contact_button" onclick="displayModal()" aria-haspopup="contact_modal">Contactez-moi</button>
 			</div>
             <!--fin de infos photographes-->
 
@@ -59,7 +59,7 @@
 			<div class="modal">
 				<header>
 					<h2 tabindex="0">Contactez-moi</h2>
-					<img id="closeModal" src="./assets/icons/close.svg" alt="" aria-label="Fermez le formulaire de contact" title="Fermez la modal" tabindex="0" onclick="closeModal()" />
+					<img src="./assets/icons/close.svg" id="closeModal" alt="" aria-label="Fermez le formulaire de contact" title="Fermez la modal" tabindex="0" onclick="closeModal()" />
 				</header>
 				<form onsubmit="sendMessage(event)">
 					<div>
@@ -72,7 +72,7 @@
 							<label for="message">Message</label>
 							<textarea id="message" name="message"></textarea>
 					</div>
-					<button class="contact_button" aria-label="Envoyez">Envoyer</button>
+					<button class="contact_button" aria-label="Envoyez" tabindex="0">Envoyer</button>
 				</form>
 			</div>
 		</div>
