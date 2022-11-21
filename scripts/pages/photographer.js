@@ -3,7 +3,7 @@ const photographerId = +searchParams.get('id')
 let photographer
 let medias
 const lightbox = document.getElementById('media_modal')
-//const contact_modal = document.querySelector('#contact_modal')
+
 const main = document.querySelector('main')
 const header = document.querySelector('header')
 const orderSelect = document.querySelector('#orderSelect')

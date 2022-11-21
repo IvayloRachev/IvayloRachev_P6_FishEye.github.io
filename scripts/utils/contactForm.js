@@ -6,7 +6,7 @@ function displayModal() {
     const modal = document.getElementById('contact_modal');
     const main = document.querySelector('#main');
     const header = document.querySelector('#header');
-    
+
     modal.style.display = "block";
     modal.setAttribute('aria-hidden', 'false');
     main.setAttribute('aria-hidden', 'true');
@@ -31,11 +31,11 @@ function displayModal() {
 //function close modal
 function closeModal() {
     const modalContact = document.getElementById("contact_modal");
-    //const closeTheModal = document.getElementById('closeModal');
+
     const main = document.querySelector('main');
     const header = document.querySelector('header');
     modalContact.style.display = "none";
-    //document.body.style.overflow = 'auto'
+
     modalContact.setAttribute('aria-hidden', 'true');
     main.setAttribute('aria-hidden', 'false');
 	header.setAttribute('aria-hidden', 'false');
@@ -49,7 +49,7 @@ modal.addEventListener('keydown', (e) => {
 
 closeTheModal.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-        //console.log(closeTheModal);
+        
         closeModal();
         
     }
