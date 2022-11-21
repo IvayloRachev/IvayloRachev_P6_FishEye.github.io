@@ -3,7 +3,7 @@ const photographerId = +searchParams.get('id')
 let photographer
 let medias
 const lightbox = document.getElementById('media_modal')
-const contact_modal = document.querySelector('#contact_modal')
+//const contact_modal = document.querySelector('#contact_modal')
 const main = document.querySelector('main')
 const header = document.querySelector('header')
 const orderSelect = document.querySelector('#orderSelect')
@@ -33,11 +33,6 @@ const likes = []
 				}
 				if (e.code === 'Escape') {
 					return closeMediaModal()
-				}
-			}
-			if (contact_modal.style.display && contact_modal.style.display !== 'none') {
-				if (e.code === 'Escape') {
-					contact_modal.style.display = 'none'
 				}
 			}
 		})

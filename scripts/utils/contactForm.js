@@ -1,5 +1,4 @@
 const closeTheModal = document.getElementById('closeModal');
-//const form = document.querySelector('form');
 const modal = document.getElementById("contact_modal");
 let focusedElement;
 
@@ -32,7 +31,7 @@ function displayModal() {
 
 //function close modal
 function closeModal() {
-    //const close = document.getElementById('closeModal');
+    const closeTheModal = document.getElementById('closeModal');
     const modal = document.getElementById("contact_modal");
     const main = document.querySelector('main');
     const header = document.querySelector('header');
@@ -55,11 +54,6 @@ closeTheModal.addEventListener('keydown', (e) => {
         return closeModal();
     }
 });
-
-
-
-
-
 //fin de fonction close modal*/
 
 //function send message and display infos in console.log
