@@ -3,14 +3,9 @@ const photographerId = +searchParams.get('id')
 let photographer
 let medias
 const lightbox = document.getElementById('media_modal')
-const leftArrow = document.getElementById('left-arrow')
-//const rightArrow = document.getElementById('right-arrow')
-//const closeButton = document.getElementById('close-button')
 const contact_modal = document.querySelector('#contact_modal')
-const main = document.querySelector('#main')
-const header = document.querySelector('#header')
-//const main = document.querySelector('#main')
-//const header = document.querySelector('#header')
+const main = document.querySelector('main')
+const header = document.querySelector('header')
 const orderSelect = document.querySelector('#orderSelect')
 const photograph_medias = document.querySelector('#photograph_medias')
 const likes = []
@@ -136,20 +131,33 @@ function displayMedias(photographer, medias) {
 			lightbox.children[lightbox.children.length - 1].children[0].controls = true
 			lightbox.children[lightbox.children.length - 1].appendChild(spanName.cloneNode(true))
 			lightbox.style.display = 'inherit'
-			//document.body.style.overflow = 'hidden'
-			//document.body.setAttribute('aria-hidden', 'true')
-			//media_modal.focus()
-			leftArrow.focus()
-			//rightArrow.focus()
-			//closeButton.focus()
 			main.setAttribute('aria-hidden', 'true')
 			header.setAttribute('aria-hidden', 'true')
 			lightbox.setAttribute('aria-hidden', 'false')
-
-			//const focusableElements = lightbox.querySelectorAll('#left-arrow, #right-arrow, close-button')
-			//const firstElement = focusableElements[0]
-			//const lastElement = focusableElements[focusableElements.length - 1]
-			
+			const media_modal = document.getElementById('media_modal')
+			let focusableElements = document.querySelectorAll('#left-arrow, #right-arrow, #close-button, #imageModal')
+			focusableElements = Array.prototype.slice.call(focusableElements)
+			let firstElement = focusableElements[0]
+			let lastElement = focusableElements[focusableElements.length - 1]
+			firstElement.focus()
+			media_modal.addEventListener('keydown', tabKey)
+			function tabKey(e) {
+				let isTabPressed = e.key === 'Tab'
+				if (!isTabPressed) {
+					return
+				}
+				if (e.shiftKey) {
+					if (document.activeElement === firstElement) {
+						lastElement.focus()
+						e.preventDefault()
+					}
+				}else {
+					if (document.activeElement === lastElement) {
+						firstElement.focus()
+						e.preventDefault()
+					}
+				}
+			}
 		}
 		//fin de display modal
 
