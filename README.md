@@ -1,6 +1,6 @@
-# Base de code du projet P6 - Parcours Front-end
+# Projet 6 du parcours Développeur d'applications JavaScript/React
 
 ## Démarrer le projet
 
-Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.
+Pour lancer le projet, il suffit d'utiliser LiveServeur de VScode.
 
