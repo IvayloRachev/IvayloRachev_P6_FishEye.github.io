@@ -40,6 +40,7 @@ const likes = []
 
 		const contactTitle = document.querySelector('#contact_modal h2')
 		contactTitle.textContent += ' ' + photographer.name
+		contactTitle.style.margin = "0"
     }catch (error) {
         console.error(error)
         const errorElement = document.createElement('h2')

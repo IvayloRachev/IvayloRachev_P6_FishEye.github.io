@@ -191,7 +191,7 @@
     width: 40%;
     height: fit-content;
     margin: auto;
-    padding: 35px;
+    padding: 0 35px 35px 35px;
     border-radius: 5px;
     background-color: #DB8876;
     position: absolute;
