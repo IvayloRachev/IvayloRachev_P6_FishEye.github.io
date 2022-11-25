@@ -257,7 +257,7 @@ form textarea {
     display: none;
    }
 
-   @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .header_photographer {
         width: 86%;
     }
