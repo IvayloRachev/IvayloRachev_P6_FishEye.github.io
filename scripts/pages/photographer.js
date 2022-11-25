@@ -67,6 +67,7 @@ function photographerHeader(photographer) {
 
 	image.src = `./assets/photographers/${portrait}`
 	image.alt = photographer.name
+	image.setAttribute('tabindex', '0')
 
 	header.appendChild(image)
 }
