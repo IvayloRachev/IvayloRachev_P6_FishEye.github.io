@@ -1,3 +1,7 @@
+.logo_photographer {
+    height: 50px;
+}
+
 #contact_modal {
     display: none;
     width: 100%;
@@ -252,3 +256,17 @@ form textarea {
 [aria-hidden="true"]{
     display: none;
    }
+
+   @media screen and (min-width: 768px) {
+    .header_photographer {
+        width: 86%;
+    }
+    
+}
+
+@media screen and (min-width: 1600px) {
+    .header_photographer {
+        width: 89%;
+    }
+    
+}
