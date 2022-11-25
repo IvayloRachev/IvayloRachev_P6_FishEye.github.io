@@ -1,5 +1,3 @@
-    //import { photographerFactory } from "../factories/photographer.js";
-    
     // get the datas from json
     async function getPhotographers() {
         try {

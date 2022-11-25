@@ -49,7 +49,6 @@ modal.addEventListener('keydown', (e) => {
 
 closeTheModal.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-        
         closeModal();
         
     }
